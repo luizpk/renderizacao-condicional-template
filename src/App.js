@@ -18,7 +18,9 @@ function App() {
 
   const [tela, setTela] = useState(1);
 
-  /* Utilizando if/else*/
+
+  
+  /* UTILIZANDO IF/ELSE */
 
   // if (tela===1){
 
@@ -37,30 +39,64 @@ function App() {
   //   );
   // }
 
-/* utilizando switch case*/
 
-  switch (tela) {
-    case 1:
-      return (
-      <MainContainer >
-      <GlobalStyled />
-      <TelaLogin />
-      </MainContainer>);
-    case 2:
-      return (
-      <MainContainer >
-      <GlobalStyled />
-      <TelaCadastro />
-      </MainContainer>
-      );
+
+
+
+/* UTILIZANDO SWITCH CASE*/
+
+  // switch (tela) {
+  //   case 1:
+  //     return (
+  //     <MainContainer >
+    //     <GlobalStyled />
+    //     <TelaLogin />
+  //     </MainContainer>);
+  //   case 2:
+  //     return (
+  //     <MainContainer >
+    //     <GlobalStyled />
+    //     <TelaCadastro />
+  //     </MainContainer>
+  //     );
     
-    default:
-      console.log("Pagina não encontrada."); 
+  //   default:
+  //     console.log("Pagina não encontrada."); 
 
-  }
+  // }
 
 
-  
+
+ 
+/* UTILIZANDO EXPRESSIONS (TERNÁRIO) */
+
+
+
+  // return (
+  //   <MainContainer >
+  //     <GlobalStyled />
+
+  //     {/*condição ? true : false*/}
+  //     {tela === 1 ? <TelaLogin /> : <TelaCadastro />}
+    
+  //   </MainContainer>);
+
+
+
+  // UTILIZANDO EXPRESSIONS (CURTO-CIRCUITO)
+
+
+  return (
+      <MainContainer >
+        <GlobalStyled />
+
+        {tela && <TelaLogin/> || <TelaCadastro /> }
+
+        
+      </MainContainer>
+  );
+
+
 }
 
 export default App;
